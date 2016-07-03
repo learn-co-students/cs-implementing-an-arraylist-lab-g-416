@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.flatironschool.javacs;
 
@@ -15,218 +15,231 @@ import java.util.ListIterator;
  *
  */
 public class MyArrayList<E> implements List<E> {
-	int size;                    // keeps track of the number of elements
-	private E[] array;           // stores the elements
-	
-	/**
-	 * 
-	 */
-	public MyArrayList() {
-		// You can't instantiate an array of T[], but you can instantiate an
-		// array of Object and then typecast it.  Details at
-		// http://www.ibm.com/developerworks/java/library/j-jtp01255/index.html
-		array = (E[]) new Object[10];
-		size = 0;
-	}
+  int size;                    // keeps track of the number of elements
+  private E[] array;           // stores the elements
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// run a few simple tests
-		MyArrayList<Integer> mal = new MyArrayList<Integer>();
-		mal.add(1);
-		mal.add(2);
-		mal.add(3);
-		System.out.println(Arrays.toString(mal.toArray()) + " size = " + mal.size);
-		
-		mal.remove(new Integer(2));
-		System.out.println(Arrays.toString(mal.toArray()) + " size = " + mal.size);
-	}
+  /**
+   *
+   */
+  public MyArrayList() {
+    // You can't instantiate an array of T[], but you can instantiate an
+    // array of Object and then typecast it.  Details at
+    // http://www.ibm.com/developerworks/java/library/j-jtp01255/index.html
+    array = (E[]) new Object[10];
+    size = 0;
+  }
 
-	@Override
-	public boolean add(E element) {
-		if (size >= array.length) {
-			// make a bigger array and copy over the elements
-			E[] bigger = (E[]) new Object[array.length * 2];
-			System.arraycopy(array, 0, bigger, 0, array.length);
-			array = bigger;
-		} 
-		array[size] = element;
-		size++;
-		return true;
-	}
+  /**
+   * @param args
+   */
+  public static void main(String[] args) {
+    // run a few simple tests
+    MyArrayList<Integer> mal = new MyArrayList<Integer>();
+    mal.add(1);
+    mal.add(2);
+    mal.add(3);
+    System.out.println(Arrays.toString(mal.toArray()) + " size = " + mal.size);
 
-	@Override
-	public void add(int index, E element) {
-		if (index < 0 || index > size) {
-			throw new IndexOutOfBoundsException();
-		}
-		// TODO: fill in the rest of this method
-	}
+    mal.remove(new Integer(2));
+    System.out.println(Arrays.toString(mal.toArray()) + " size = " + mal.size);
+  }
 
-	@Override
-	public boolean addAll(Collection<? extends E> collection) {
-		boolean flag = true;
-		for (E element: collection) {
-			flag &= add(element);
-		}
-		return flag;
-	}
+  @Override
+  public boolean add(E element) {
+    if (size >= array.length) {
+      // make a bigger array and copy over the elements
+      E[] bigger = (E[]) new Object[array.length * 2];
+      System.arraycopy(array, 0, bigger, 0, array.length);
+      array = bigger;
+    }
+    array[size] = element;
+    size++;
+    return true;
+  }
 
-	@Override
-	public boolean addAll(int index, Collection<? extends E> collection) {
-		throw new UnsupportedOperationException();
-	}
+  @Override
+  public void add(int index, E element) {
+    if (index < 0 || index > size) {
+      throw new IndexOutOfBoundsException();
+    }
+    add(element);
+    for(int i = index+1; i < size; i++){
+      array[i] = array[i+1];
+    }
+    array[index] = element;
+  }
 
-	@Override
-	public void clear() {
-		// note: this version does not actually null out the references
-		// in the array, so it might delay garbage collection.
-		size = 0;
-	}
+  @Override
+  public boolean addAll(Collection<? extends E> collection) {
+    boolean flag = true;
+    for (E element: collection) {
+      flag &= add(element);
+    }
+    return flag;
+  }
 
-	@Override
-	public boolean contains(Object obj) {
-		return indexOf(obj) != -1;
-	}
+  @Override
+  public boolean addAll(int index, Collection<? extends E> collection) {
+    throw new UnsupportedOperationException();
+  }
 
-	@Override
-	public boolean containsAll(Collection<?> collection) {
-		for (Object element: collection) {
-			if (!contains(element)) {
-				return false;
-			}
-		}
-		return true;
-	}
+  @Override
+  public void clear() {
+    // note: this version does not actually null out the references
+    // in the array, so it might delay garbage collection.
+    size = 0;
+  }
 
-	@Override
-	public E get(int index) {
-		if (index < 0 || index >= size) {
-			throw new IndexOutOfBoundsException();
-		}
-		return array[index];
-	}
+  @Override
+  public boolean contains(Object obj) {
+    return indexOf(obj) != -1;
+  }
 
-	@Override
-	public int indexOf(Object target) {
-		// TODO: fill in this method
-		return 0;
-	}
+  @Override
+  public boolean containsAll(Collection<?> collection) {
+    for (Object element: collection) {
+      if (!contains(element)) {
+        return false;
+      }
+    }
+    return true;
+  }
 
-	/** Checks whether an element of the array is the target.
-	 * 
-	 * Handles the special case that the target is null.
-	 * 
-	 * @param target
-	 * @param object
-	 */
-	private boolean equals(Object target, Object element) {
-		if (target == null) {
-			return element == null;
-		} else {
-			return target.equals(element);
-		}
-	}
+  @Override
+  public E get(int index) {
+    if (index < 0 || index >= size) {
+      throw new IndexOutOfBoundsException();
+    }
+    return array[index];
+  }
 
-	@Override
-	public boolean isEmpty() {
-		return size == 0;
-	}
+  @Override
+  public int indexOf(Object target) {
+    for(int i = 0; i < size; i++){
+      if (equals(target, array[i])){
+        return i;
+      }
+    }
+    return -1;
+  }
 
-	@Override
-	public Iterator<E> iterator() {
-		// make a copy of the array
-		E[] copy = Arrays.copyOf(array, size);
-		// make a list and return an iterator
-		return Arrays.asList(copy).iterator();
-	}
+  /** Checks whether an element of the array is the target.
+   *
+   * Handles the special case that the target is null.
+   *
+   * @param target
+   * @param object
+   */
+  private boolean equals(Object target, Object element) {
+    if (target == null) {
+      return element == null;
+    } else {
+      return target.equals(element);
+    }
+  }
 
-	@Override
-	public int lastIndexOf(Object target) {
-		// see notes on indexOf
-		for (int i = size-1; i>=0; i--) {
-			if (equals(target, array[i])) {
-				return i;
-			}
-		}
-		return -1;
-	}
+  @Override
+  public boolean isEmpty() {
+    return size == 0;
+  }
 
-	@Override
-	public ListIterator<E> listIterator() {
-		// make a copy of the array
-		E[] copy = Arrays.copyOf(array, size);
-		// make a list and return an iterator
-		return Arrays.asList(copy).listIterator();
-	}
+  @Override
+  public Iterator<E> iterator() {
+    // make a copy of the array
+    E[] copy = Arrays.copyOf(array, size);
+    // make a list and return an iterator
+    return Arrays.asList(copy).iterator();
+  }
 
-	@Override
-	public ListIterator<E> listIterator(int index) {
-		// make a copy of the array
-		E[] copy = Arrays.copyOf(array, size);
-		// make a list and return an iterator
-		return Arrays.asList(copy).listIterator(index);
-	}
+  @Override
+  public int lastIndexOf(Object target) {
+    // see notes on indexOf
+    for (int i = size-1; i>=0; i--) {
+      if (equals(target, array[i])) {
+        return i;
+      }
+    }
+    return -1;
+  }
 
-	@Override
-	public boolean remove(Object obj) {
-		int index = indexOf(obj);
-		if (index == -1) {
-			return false;
-		}
-		remove(index);
-		return true;
-	}
+  @Override
+  public ListIterator<E> listIterator() {
+    // make a copy of the array
+    E[] copy = Arrays.copyOf(array, size);
+    // make a list and return an iterator
+    return Arrays.asList(copy).listIterator();
+  }
 
-	@Override
-	public E remove(int index) {
-		// TODO: fill in this method.
-		return null;
-	}
+  @Override
+  public ListIterator<E> listIterator(int index) {
+    // make a copy of the array
+    E[] copy = Arrays.copyOf(array, size);
+    // make a list and return an iterator
+    return Arrays.asList(copy).listIterator(index);
+  }
 
-	@Override
-	public boolean removeAll(Collection<?> collection) {
-		boolean flag = true;
-		for (Object obj: collection) {
-			flag &= remove(obj);
-		}
-		return flag;
-	}
+  @Override
+  public boolean remove(Object obj) {
+    int index = indexOf(obj);
+    if (index == -1) {
+      return false;
+    }
+    remove(index);
+    return true;
+  }
 
-	@Override
-	public boolean retainAll(Collection<?> collection) {
-		throw new UnsupportedOperationException();
-	}
+  @Override
+  public E remove(int index) {
+    E element = get(index);
+    for(int i = index; i < size-1; i++){
+      array[i] = array[i+1];
+    }
+    size--;
+    return element;
+  }
 
-	@Override
-	public E set(int index, E element) {
-		// TODO: fill in this method.
-		return null;
-	}
+  @Override
+  public boolean removeAll(Collection<?> collection) {
+    boolean flag = true;
+    for (Object obj: collection) {
+      flag &= remove(obj);
+    }
+    return flag;
+  }
 
-	@Override
-	public int size() {
-		return size;
-	}
+  @Override
+  public boolean retainAll(Collection<?> collection) {
+    throw new UnsupportedOperationException();
+  }
 
-	@Override
-	public List<E> subList(int fromIndex, int toIndex) {
-		if (fromIndex < 0 || toIndex >= size || fromIndex > toIndex) {
-			throw new IndexOutOfBoundsException();
-		}
-		E[] copy = Arrays.copyOfRange(array, fromIndex, toIndex);
-		return Arrays.asList(copy);
-	}
+  @Override
+  public E set(int index, E element) {
+    E replacedElement = get(index);
+    array[index] = element;
+    return replacedElement;
+  }
 
-	@Override
-	public Object[] toArray() {
-		return Arrays.copyOf(array, size);
-	}
+  @Override
+  public int size() {
+    return size;
+  }
 
-	@Override
-	public <T> T[] toArray(T[] array) {
-		throw new UnsupportedOperationException();		
-	}
+  @Override
+  public List<E> subList(int fromIndex, int toIndex) {
+    if (fromIndex < 0 || toIndex >= size || fromIndex > toIndex) {
+      throw new IndexOutOfBoundsException();
+    }
+    E[] copy = Arrays.copyOfRange(array, fromIndex, toIndex);
+    return Arrays.asList(copy);
+  }
+
+  @Override
+  public Object[] toArray() {
+    return Arrays.copyOf(array, size);
+  }
+
+  @Override
+  public <T> T[] toArray(T[] array) {
+    throw new UnsupportedOperationException();
+  }
 }
