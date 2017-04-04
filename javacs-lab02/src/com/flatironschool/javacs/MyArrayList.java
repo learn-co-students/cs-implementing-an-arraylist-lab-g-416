@@ -185,16 +185,13 @@ public class MyArrayList<E> implements List<E> {
 		if (index < 0 || index >= size) {
 			throw new IndexOutOfBoundsException();
 		}
-		E removedElement = this.get(index);
-		
-		if (index == this.size-1) {
-			this.array[index] = null;
-		} else {
-			for (int i=index; i<this.size-1; i++) {
-				this.array[index] = this.array[index+1];
-			}
-			this.array[this.size-1] = null;
+		E removedElement = this.get(index);	
+
+		for (int i=index; i<this.size-1; i++) {
+			this.array[index] = this.array[index+1];
 		}
+		this.array[this.size-1] = null;
+		
 		this.size--;
 		return removedElement;
 	}
