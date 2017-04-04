@@ -66,7 +66,7 @@ public class MyArrayList<E> implements List<E> {
 			size++;
 		} else {
 			this.add(this.array[this.size-1]);
-			for (int i=this.size-3; i > index; i--) {
+			for (int i=this.size-2; i > index; i--) {
 				this.array[i] = this.array[i-1];
 			}
 			this.array[index] = element;
@@ -185,7 +185,7 @@ public class MyArrayList<E> implements List<E> {
 		if (index < 0 || index >= size) {
 			throw new IndexOutOfBoundsException();
 		}
-		E removedElement = this.array[index];
+		E removedElement = this.get(index);
 		
 		if (index == this.size-1) {
 			this.array[index] = null;
@@ -216,7 +216,7 @@ public class MyArrayList<E> implements List<E> {
 		if (index < 0 || index >= size) {
 			throw new IndexOutOfBoundsException();
 		}
-		E previous = this.array[index];
+		E previous = this.get(index);
 		this.array[index] = element;
 		return previous;
 	}
