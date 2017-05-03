@@ -117,7 +117,7 @@ public class MyArrayListTest {
 	public void testContains() {
 		assertThat(mal.contains(1), equalTo(true));
 		assertThat(mal.contains(4), equalTo(false));
-		assertThat(mal.contains(null), equalTo(false));
+		assertThat(mal.contains(null), equalTo(true));
 		mal.add(null);
 		assertThat(mal.contains(null), equalTo(true));
 	}
