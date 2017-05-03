@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="Jonathans-MBP.home" name="com.flatironschool.javacs.MyArrayListTest" skipped="0" tests="19" time="0.065" timestamp="2017-05-03T16:30:02">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="env.rvm_ruby_bits" value="" />
+    <property name="env.JAVA_MAIN_CLASS_7742" value="org.apache.tools.ant.launch.Launcher" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="env.XPC_SERVICE_NAME" value="0" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="env._system_arch" value="x86_64" />
+    <property name="env.rvm_silent_flag" value="" />
+    <property name="os.name" value="Mac OS X" />
+    <property name="env.rvm_gemstone_package_file" value="" />
+    <property name="env.rvm_quiet_flag" value="" />
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/classes" />
+    <property name="env.TMPDIR" value="/var/folders/jr/yr7v8vj14t50y0lp25txhv_r0000gn/T/" />
+    <property name="env.PWD" value="/Users/jonathanfoster/Desktop/java_learn/cs-implementing-an-arraylist-lab-g-416" />
+    <property name="env.rvm_ruby_make" value="" />
+    <property name="env.rvm_ruby_make_install" value="" />
+    <property name="env.rvm_proxy" value="" />
+    <property name="env.LANG" value="en_US.UTF-8" />
+    <property name="env.LESS" value="-R" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="/usr/local/Cellar/ant/1.10.1/libexec" />
+    <property name="java.runtime.version" value="1.8.0_101-b13" />
+    <property name="env.Apple_PubSub_Socket_Render" value="/private/tmp/com.apple.launchd.2vO9BL3Ce6/Render" />
+    <property name="env.rvm_version" value="1.27.0 (latest)" />
+    <property name="user.name" value="jonathanfoster" />
+    <property name="env.USER" value="jonathanfoster" />
+    <property name="env.SHELL" value="/bin/zsh" />
+    <property name="env.__CF_USER_TEXT_ENCODING" value="0x1F5:0x0:0x0" />
+    <property name="env._system_type" value="Darwin" />
+    <property name="env.PATH" value="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jonathanfoster/.rvm/bin" />
+    <property name="user.language" value="en" />
+    <property name="env.rvm_prefix" value="/Users/jonathanfoster" />
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib" />
+    <property name="env.rvm_docs_type" value="" />
+    <property name="ant.project.default-target" value="build" />
+    <property name="env.XPC_FLAGS" value="0x0" />
+    <property name="ant.project.name" value="JavaCS" />
+    <property name="env.rvm_path" value="/Users/jonathanfoster/.rvm" />
+    <property name="env.LC_CTYPE" value="en_US.UTF-8" />
+    <property name="java.version" value="1.8.0_101" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="env._system_name" value="OSX" />
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/endorsed" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
+    <property name="env.rvm_bin_path" value="/Users/jonathanfoster/.rvm/bin" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="env.SHLVL" value="3" />
+    <property name="env.rvm_alias_expanded" value="" />
+    <property name="file.separator" value="/" />
+    <property name="env._system_version" value="10.10" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="52.0" />
+    <property name="user.country" value="US" />
+    <property name="ant.file.JavaCS" value="/Users/jonathanfoster/Desktop/java_learn/cs-implementing-an-arraylist-lab-g-416/javacs-lab02/build.xml" />
+    <property name="env.rvm_sdk" value="" />
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre" />
+    <property name="env.ZSH" value="/Users/jonathanfoster/.oh-my-zsh" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="env.LOGNAME" value="jonathanfoster" />
+    <property name="ant.file" value="/Users/jonathanfoster/Desktop/java_learn/cs-implementing-an-arraylist-lab-g-416/javacs-lab02/build.xml" />
+    <property name="os.version" value="10.10.5" />
+    <property name="env.rvm_hook" value="" />
+    <property name="env.rvm_use_flag" value="" />
+    <property name="env.rvm_only_path_flag" value="" />
+    <property name="env.TERM_PROGRAM_VERSION" value="343.7" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="25.101-b13" />
+    <property name="ant.library.dir" value="/usr/local/Cellar/ant/1.10.1/libexec/lib" />
+    <property name="env.rvm_ruby_file" value="" />
+    <property name="junit.output.dir" value="junit" />
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob" />
+    <property name="env.TERM" value="xterm-256color" />
+    <property name="sun.io.unicode.encoding" value="UnicodeBig" />
+    <property name="env.rvm_nightly_flag" value="" />
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit" />
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="env.LSCOLORS" value="Gxfxcxdxbxegedabagacad" />
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="user.home" value="/Users/jonathanfoster" />
+    <property name="target" value="1.6" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="env.TERM_PROGRAM" value="Apple_Terminal" />
+    <property name="env.PAGER" value="less" />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="java.library.path" value="/Users/jonathanfoster/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:." />
+    <property name="gopherProxySet" value="false" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="java.class.path" value="/Users/jonathanfoster/Desktop/java_learn/cs-implementing-an-arraylist-lab-g-416/javacs-lab02/bin:/Users/jonathanfoster/Desktop/java_learn/cs-implementing-an-arraylist-lab-g-416/javacs-lab02/lib/junit-4.12.jar:/Users/jonathanfoster/Desktop/java_learn/cs-implementing-an-arraylist-lab-g-416/javacs-lab02/lib/hamcrest-core-1.3.jar:/usr/local/Cellar/ant/1.10.1/libexec/lib/ant-launcher.jar:/usr/local/Cellar/ant/1.10.1/libexec/lib/ant.jar:/usr/local/Cellar/ant/1.10.1/libexec/lib/ant-junit.jar:/usr/local/Cellar/ant/1.10.1/libexec/lib/ant-junit4.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.10.1 compiled on February 2 2017" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.flatironschool.javacs.MyArrayListTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/jonathanfoster/Desktop/java_learn/cs-implementing-an-arraylist-lab-g-416/javacs-lab02/junit/TEST-com.flatironschool.javacs.MyArrayListTest.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/Users/jonathanfoster/Desktop/java_learn/cs-implementing-an-arraylist-lab-g-416/javacs-lab02/junitvmwatcher6329649668835917987.properties propsfile=/Users/jonathanfoster/Desktop/java_learn/cs-implementing-an-arraylist-lab-g-416/javacs-lab02/junit525350542243964143.properties" />
+    <property name="env.TERM_SESSION_ID" value="59F1373A-3C1E-4B03-A14C-9D28BC85B234" />
+    <property name="ant.file.type.JavaCS" value="file" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="ant.file.type" value="file" />
+    <property name="java.vm.specification.version" value="1.8" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="debuglevel" value="source,lines,vars" />
+    <property name="env.HOME" value="/Users/jonathanfoster" />
+    <property name="java.io.tmpdir" value="/var/folders/jr/yr7v8vj14t50y0lp25txhv_r0000gn/T/" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="env.SSH_AUTH_SOCK" value="/private/tmp/com.apple.launchd.xXWwUFmXeJ/Listeners" />
+    <property name="env.rvm_ruby_mode" value="" />
+    <property name="env.rvm_script_name" value="" />
+    <property name="env.rvm_wrapper_name" value="" />
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment" />
+    <property name="os.arch" value="x86_64" />
+    <property name="java.ext.dirs" value="/Users/jonathanfoster/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java" />
+    <property name="env.rvm_bin_flag" value="" />
+    <property name="user.dir" value="/Users/jonathanfoster/Desktop/java_learn/cs-implementing-an-arraylist-lab-g-416" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="/Users/jonathanfoster/Desktop/java_learn/cs-implementing-an-arraylist-lab-g-416/javacs-lab02" />
+    <property name="ant.java.version" value="1.8" />
+    <property name="ant.core.lib" value="/usr/local/Cellar/ant/1.10.1/libexec/lib/ant.jar" />
+    <property name="source" value="1.6" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="java.specification.version" value="1.8" />
+    <property name="env.rvm_niceness" value="" />
+    <property name="ant.project.invoked-targets" value="test" />
+    <property name="env.rvm_gemstone_url" value="" />
+  </properties>
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testToArray" time="0.005" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testAddIntT" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testGet" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testSet" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testAddAllCollectionOfQextendsT" time="0.001" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testClear" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testAddT" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testSize" time="0.001" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testLastIndexOf" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testMyArrayList" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testContainsAll" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testRemoveObject" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testContains" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testIndexOf" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testIsEmpty" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testIterator" time="0.001" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testRemoveAll" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testRemoveInt" time="0.0" />
+  <testcase classname="com.flatironschool.javacs.MyArrayListTest" name="testSubList" time="0.0" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
